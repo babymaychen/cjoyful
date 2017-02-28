@@ -1,8 +1,12 @@
 <template>
 	<el-card class="box-card" :id="id">
 		<div class="clearfix header">
-			<h2 class="title fLeft">
-				<a class="titleText" target="_blank" href="//tv.youku.com/">{{ classifyData }}</a>
+			<h2 class="title fLeft" v-on:mouseover="mouseOverOnTitle" v-on:mouseout="mouseOutOnTitle">
+				<a class="titleText" target="_blank" href="//tv.youku.com/">
+					<i class="iconText" v-bind:style="{ background: 'url('+icons+') no-repeat -84px -1553px' }"></i>
+					{{ classifyData }}
+					<i :class="[{ gray: isNotHover }, iconArrow]" v-bind:style="{ background: 'url('+icons+') no-repeat -540px -1623px' }"></i>
+				</a>
 			</h2>
 			<ul class="t_tab">
 				<li :class="[current == index ? 'current' : '']" v-for="(data, index) in classify">
@@ -79,8 +83,11 @@
 	export default {
 		data() {
 	    	return {
+	    		iconArrow: 'iconArrow',
 	    		current: 0,
+	    		isNotHover: true,
 	    		ranking: require('../assets/images/rankingList.png'),
+	    		icons: require('../assets/images/icons.png'),
 	    		classify: [
 	    			{
 	    				url: '//tv.youku.com/',
@@ -500,6 +507,12 @@
 	    methods: {
 	        mouseOver: function(index) {
 	        	this.current = index
+	        },
+	        mouseOverOnTitle: function() {
+	        	this.isNotHover = false
+	        },
+	        mouseOutOnTitle: function() {
+	        	this.isNotHover = true
 	        }
 	    }
 	}
@@ -629,32 +642,41 @@
 		width: 30px;
 		height: 27px;
 	}
-	.title a.titleText:before {
+	.iconText {
 		content: "";
 		display: inline-block;
 		vertical-align: middle;
 		height: 34px;
 		width: 24px;
-		background: url('../assets/images/icons.png') no-repeat -84px -1553px;
-		margin-right: 18px;
+		margin-right: 10px;
 	}
-	.title a.titleText:after {
+	.iconArrow {
 		content: "";
 		display: inline-block;
 		vertical-align: middle;
-		height: 20px;
+		height: 22px;
 		width: 10px;
-		background: url('../assets/images/icons.png') no-repeat -473px -1623px;
-		margin-left: 18px;
+		margin-left: 15px;
+	}
+	.gray {
+		filter: grayscale(100%);
+	    -webkit-filter: grayscale(100%);
+	    -moz-filter: grayscale(100%);
+	    -ms-filter: grayscale(100%);
+	    -o-filter: grayscale(100%);
+	    filter: url("data:image/svg+xml;utf8,<svg xmlns=\'//www.w3.org/2000/svg\'><filter id=\'…33 .3333 0 0 .3333 .3333 .3333 0 0 0 0 0 1 0\'/></filter></svg>#grayscale");
+	    filter: progid:DXImageTransform.Microsoft.BasicImage(grayscale=1);
+	    filter: gray;
+		-webkit-filter: grayscale(1);
 	}
 	.title:hover a.titleText {
 		color: #14dcd4;
 	}
-	.title:hover a.titleText:after {
+	.title:hover .iconArrow {
 		background: url('../assets/images/icons.png') no-repeat -540px -1623px;
 	}
 	ul.t_tab {
-		margin: -1px 0 0 20px;
+		margin: -1px 0 0 35px;
 		float: left;
 		line-height: 27px;
 	}
