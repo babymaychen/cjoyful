@@ -3,9 +3,9 @@
 		<el-autocomplete class="searchArea" v-model="state4" :fetch-suggestions="querySearchAsync"
 			placeholder="锦绣未央"  @select="handleSelect">
 		</el-autocomplete>
-		<a href="http://top.youku.com/rank/?spm=a2hww.20023042.search.1" target="_blank" class="rankq" v-bind:style="{ background: 'url('+ranking+') no-repeat left center' }" title="cjoyful指数排行榜"></a>
+    <router-link to="/ranking" target="_blank" class="rankq" v-bind:style="{ background: 'url('+ranking+') no-repeat left center' }" title="cjoyful搜索排行榜"></router-link>
 		<el-button type="primary" class="searchBtn" icon="search">搜索</el-button>
-		<div class="bgLogo" v-bind:style="{ background: 'url('+logo+')' }"></div>
+    <div class="bgLogo" v-bind:style="{ background: 'url('+logo+')' }"></div>  
 	</div>
 </template>
 
