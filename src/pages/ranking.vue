@@ -2,11 +2,15 @@
 	<div class="ranking">
 		<t-nav></t-nav>
 		<t-search></t-search>
-		<div class="menu-wrapper">
-      <h2 class="alignL rank-Title">
-        <a :class="[isSearchTopShow ? 'show' : '']" v-on:click="searchTopClick">搜索排行榜</a>
-        <a :class="[isSearchTopShow ? '' : 'show']" v-on:click="rateTopClick">评分排行榜</a>
-      </h2>
+    <div class="menu-bg">
+		  <div class="menu-wrapper">
+        <h2 class="alignL rank-Title">
+          <a :class="[isSearchTopShow ? 'show' : '']" v-on:click="searchTopClick">搜索排行榜</a>
+          <a :class="[isSearchTopShow ? '' : 'show']" v-on:click="rateTopClick">评分排行榜</a>
+        </h2>
+      </div>
+    </div>
+    <div class="menu-wrapper">
 			<ranking-nav :classify="classify"></ranking-nav>
       <ranking-body :rankingDataArray="rankingDataArray" :searchType="isSearchTopShow"></ranking-body>
 		</div>
@@ -54,17 +58,7 @@
   	    		},
   	    		{
               current: false,
-  	    			name: "少儿",
-              url: ""
-  	    		},
-  	    		{
-              current: false,
-  	    			name: "娱乐",
-              url: ""
-  	    		},
-  	    		{
-              current: false,
-  	    			name: "搞笑",
+  	    			name: "游戏",
               url: ""
   	    		},
   	    		{
@@ -674,6 +668,140 @@
                 }
               ]
             }]
+          ],
+          episodeRankingArray: [
+            {
+              name: "三生三世十里桃花",
+              url: '',
+              imgUrl: "",
+              score: 0,
+              playNum: 0,
+              mainActors: [
+                {
+                  name: "杨幂",
+                  url: ""
+                },
+                {
+                  name: "赵又廷",
+                  url: ""
+                },
+                {
+                  name: "张智尧",
+                  url: ""
+                },
+                {
+                  name: "迪丽热巴",
+                  url: ""
+                },
+                {
+                  name: "连奕名",
+                  url: ""
+                },
+                {
+                  name: "高伟光",
+                  url: ""
+                }
+              ]
+            },
+            {
+              name: "热血长安 第一季",
+              url: '',
+              imgUrl: "",
+              score: 0,
+              playNum: 0,
+              mainActors: [
+                {
+                  name: "徐海乔",
+                  url: ""
+                },
+                {
+                  name: "鞠婧祎",
+                  url: ""
+                },
+                {
+                  name: "李鹤",
+                  url: ""
+                },
+                {
+                  name: "张辛苑",
+                  url: ""
+                },
+                {
+                  name: "刘冠麟",
+                  url: ""
+                },
+                {
+                  name: "程小蒙",
+                  url: ""
+                }
+              ]
+            },
+            {
+              name: "热血长安 第一季",
+              url: '',
+              imgUrl: "",
+              score: 0,
+              playNum: 0,
+              mainActors: [
+                {
+                  name: "徐海乔",
+                  url: ""
+                },
+                {
+                  name: "鞠婧祎",
+                  url: ""
+                },
+                {
+                  name: "李鹤",
+                  url: ""
+                },
+                {
+                  name: "张辛苑",
+                  url: ""
+                },
+                {
+                  name: "刘冠麟",
+                  url: ""
+                },
+                {
+                  name: "程小蒙",
+                  url: ""
+                }
+              ]
+            },
+            {
+              name: "热血长安 第一季",
+              url: '',
+              imgUrl: "",
+              score: 0,
+              playNum: 0,
+              mainActors: [
+                {
+                  name: "徐海乔",
+                  url: ""
+                },
+                {
+                  name: "鞠婧祎",
+                  url: ""
+                },
+                {
+                  name: "李鹤",
+                  url: ""
+                },
+                {
+                  name: "张辛苑",
+                  url: ""
+                },
+                {
+                  name: "刘冠麟",
+                  url: ""
+                },
+                {
+                  name: "程小蒙",
+                  url: ""
+                }
+              ]
+            }
           ]
   	    }
   	},
@@ -697,6 +825,10 @@
 </script>
 
 <style scoped>
+  .menu-bg {
+    background: #fff;
+    width: 100%;
+  }
   .rank-Title {
     font-size: 20px;
     font-weight: 200;

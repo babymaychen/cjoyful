@@ -40,4 +40,7 @@ a {
   text-align: center;
   color: #2c3e50;
 }
+.player .el-tabs__item {
+    width: 33%;
+}
 </style>

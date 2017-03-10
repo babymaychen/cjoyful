@@ -2,11 +2,11 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Home from '../pages/home'
 import Ranking from '../pages/ranking'
+import player from '../pages/player'
 
 Vue.use(Router)
 
 export default new Router({
-  mode: 'history',
   routes: [
     {
       path: '/',
@@ -17,6 +17,11 @@ export default new Router({
       path: '/ranking',
       name: 'Ranking',
       component: Ranking
+    },
+    {
+      path: '/play',
+      name: 'Play',
+      component: player
     }
   ]
 })

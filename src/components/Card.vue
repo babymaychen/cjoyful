@@ -23,7 +23,7 @@
 	  			<template v-for="eData in episodeData[current]" >
 	  			    <el-col :span="11" v-if="eData.type == 'first'">
 		  			  	<div class="bigImg clearfix">
-			  				<a href="">
+			  				<router-link to="/play" target="_blank">
 			  					<div class="mask"></div>
 			  					<img :src="eData.content.bgImg" alt="eData.content.title">
 			  					<ul class="p-info pos-bottom">
@@ -34,7 +34,7 @@
 		  					            </span>
 		  					        </li>
 		  					    </ul>
-			  				</a>
+			  				</router-link>
 			  			</div>
 			  			<ul class="info-list">
 		  			        <li class="title short-title">
@@ -49,7 +49,7 @@
 	  			  	    <el-row :gutter="2" v-for="data in eData">
 	  			  		<el-col :span="8" v-for="item in data">
 	  			  			<div class="sBImg">
-	  			  				<a href="">
+	  			  				<router-link to="/play" target="_blank">
 				  					<div class="mask"></div>
 				  					<img :src="item.bgImg" alt="item.title">
 				  					<ul class="p-info pos-bottom">
@@ -60,7 +60,7 @@
 			  					            </span>
 			  					        </li>
 			  					    </ul>
-				  				</a>
+				  				</router-link>
 	  			  			</div>
   				  			<ul class="info-list">
   			  			        <li class="title short-title">
